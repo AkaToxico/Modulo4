@@ -26,7 +26,7 @@ botonAgregar.addEventListener("click", function(e){
         }else{
             botonEditar.innerHTML = "<i class='fas fa-lock'></i>";
             inputItem.setAttribute("disabled","true");
-        }
+        } 
     })
            
     
