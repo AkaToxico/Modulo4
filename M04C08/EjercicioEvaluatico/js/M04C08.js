@@ -3,18 +3,19 @@ let botonAgregar = document.querySelector(".boton-agregar");
 let container = document.querySelector(".container");
 
 botonAgregar.addEventListener("click", function(e){
-    var nuevoDiv = document.createElement("div");
-    nuevoDiv.classList.add("item");
     dato = inputPrincipal.value;
-    var inputItem = document.createElement("input");
-    inputItem.setAttribute("type","text");
-    inputItem.setAttribute("disabled","true");
-    inputItem.classList.add("item-input");
-    inputItem.setRangeText(dato)
-    console.log(dato)
-    inputPrincipal.value=""
-
-    //Bonton EDITAR------------------------------------------
+    if(dato >="0"){
+        var nuevoDiv = document.createElement("div");
+        nuevoDiv.classList.add("item");
+        var inputItem = document.createElement("input");
+        inputItem.setAttribute("type","text");
+        inputItem.setAttribute("disabled","true");
+        inputItem.classList.add("item-input");
+        inputItem.setRangeText(dato)
+        console.log(dato)
+        inputPrincipal.value=""
+    
+     //Bonton EDITAR------------------------------------------
     
     var botonEditar = document.createElement("button");
     botonEditar.innerHTML = "<i class='fas fa-lock'></i>";
@@ -29,8 +30,6 @@ botonAgregar.addEventListener("click", function(e){
         } 
     })
            
-    
-
     //Boton REMOVER------------------------------------------
         
     var botonRemover = document.createElement("button");
@@ -46,7 +45,7 @@ botonAgregar.addEventListener("click", function(e){
     nuevoDiv.appendChild(botonEditar);
     nuevoDiv.appendChild(botonRemover);
     container.appendChild(nuevoDiv);
-    
+    }
     
         
 })

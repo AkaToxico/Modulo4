@@ -21,7 +21,7 @@ class Item{
         inputItem.classList.add("item-input");
         inputItem = nuevaTarea;
         var nuevoDiv = document.createElement("div");
-        nuevoDiv.classList.add(Item);
+        nuevoDiv.classList.add("item");
     
     }
     

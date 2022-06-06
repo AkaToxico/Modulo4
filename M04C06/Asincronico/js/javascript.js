@@ -27,9 +27,18 @@ class Item{
     
     //Bonton EDITAR------------------------------------------
     
-        var botonEditar = document.createElement("button");
-        botonEditar.innerHTML = "<i class='fas fa-lock'></i>";
-        botonEditar.classList.add("boton-editar");
+    var botonEditar = document.createElement("button");
+    botonEditar.innerHTML = "<i class='fas fa-lock'></i>";
+    botonEditar.classList.add("boton-editar");
+    botonEditar.addEventListener("click", function(e){
+        inputItem.removeAttribute("disabled");
+        if (inputItem.disable = !inputItem.disable){
+        botonEditar.innerHTML =  "<i class='fas fa-lock-open'></i>";
+        }else{
+            botonEditar.innerHTML = "<i class='fas fa-lock'></i>";
+            inputItem.setAttribute("disabled","true");
+        } 
+    })
     
 
     //Boton REMOVER------------------------------------------
@@ -37,6 +46,9 @@ class Item{
         var botonRemover = document.createElement("button");
         botonRemover.innerHTML = "<i class='fas fa-trash'></i>";
         botonRemover.classList.add("boton-remover");
+        botonRemover.addEventListener("click", function(e){
+            container.removeChild(nuevoDiv);
+        })
     
 
 
@@ -47,23 +59,14 @@ class Item{
         nuevoDiv.appendChild(botonRemover);
         container.appendChild(nuevoDiv);
  
-        botonEditar.addEventListener("click", function(e){
-            inputItem.removeAttribute("disabled");
-            //if (inputItem.disable = !inputItem.disable){
-
-            //botonEditar.innerHTML =  "<i class='fas fa-lock-open'></i>";
-            //}
-
-
-        })
-
-        botonRemover.addEventListener("click", function(e){
-            container.removeChild(nuevoDiv);
-        })
     } 
 }   
 
+function chequearInput(e){
+    if(inputItem = Text){
+        
+        
+    }
 
 
-
-
+}
